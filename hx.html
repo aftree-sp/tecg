@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>化学老师同款高端大气上档次铃声</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        body {
+            background: #ffffff;
+            color: #222222;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+        /* 右下角水印文字 */
+        .watermark {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            font-size: 12px;
+            color: #999;
+            pointer-events: none;
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 32px;
+            font-weight: 600;
+        }
+        .button-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
+            max-width: 340px;
+            margin-bottom: 32px;
+        }
+        .music-btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            background:#fff;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+        .music-btn:hover {
+            background-color: #f3f4f6;
+        }
+        .music-btn svg {
+            width:24px;
+            height:24px;
+            flex-shrink:0;
+        }
+        .iframe-container {
+            width: 100%;
+            max-width: 660px;
+        }
+    </style>
+</head>
+<body>
+    <h1>化学老师同款高端大气上档次铃声</h1>
+
+    <div class="button-wrap">
+        <button class="music-btn" onclick="goNetease()">
+            <!-- 网易云音乐svg -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="#C20C0C" d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm179.2 633.6c-19.2 25.6-54.4 38.4-83.2 25.6l-128-51.2c-12.8-6.4-25.6-19.2-25.6-32V409.2c0-38.4 32-70.4 70.4-70.4 12.8 0 25.6 6.4 38.4 12.8l115.2 44.8c38.4 12.8 64 51.2 51.2 89.6l-38.4 211.2z"/></svg>
+            去网易云播放
+        </button>
+        <button class="music-btn" onclick="goQQMusic()">
+            <!-- QQ音乐svg -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="#31C27C" d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm128 640l-128 128-128-128h96V448h64v256h96z"/></svg>
+            在QQ音乐播放
+        </button>
+        <button class="music-btn" onclick="goQishui()">
+            <!-- 汽水音乐svg -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="#00C1D0" d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-64 256h128v256h-128V320zm0 320h128v128h-128V640z"/></svg>
+            在汽水音乐播放
+        </button>
+        <button class="music-btn" onclick="goKugou()">
+            <!-- 酷狗音乐svg -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="#0088FF" d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-64 288h128v256h-128V352zm0 320h128v128h-128V672z"/></svg>
+            在酷狗音乐播放
+        </button>
+        <button class="music-btn" onclick="goAppleMusic()">
+            <!-- Apple Music svg -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#FB233B" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            在AppleMusic播放
+        </button>
+    </div>
+
+    <div class="iframe-container">
+        <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/cn/album/%E8%B8%8F%E5%B1%B1%E6%B2%B3/1669704313?i=1669704650"></iframe>
+    </div>
+
+    <div class="watermark">前任</div>
+
+<script>
+function goNetease(){
+    window.open("https://music.163.com/#/song?id=1804320463","_blank")
+}
+function goQQMusic(){
+    window.open("https://y.qq.com/n/ryqq_v2/songDetail/001DEjRI0ihriN","_blank")
+}
+function goQishui(){
+    window.open("https://www.douyin.com/qishui/playlist/7458433581967214643","_blank")
+}
+function goKugou(){
+    window.open("https://www.kugou.com/song/1fnp4v99.html","_blank")
+}
+function goAppleMusic(){
+    window.open("https://music.apple.com/cn/album/%E8%B8%8F%E5%B1%B1%E6%B2%B3/1669704313?i=1669704650","_blank")
+}
+</script>
+</body>
+</html>
