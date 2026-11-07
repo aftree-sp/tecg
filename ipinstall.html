@@ -1,62 +1,286 @@
-东八区 边检终端 · 终端号 IPP-WC-0001
---:--:--
-WEB CLIP / 描述文件分发
-IP, PLEASE
-请出示你的 IP — 桌面安装包
-你是东八区检查站的审查员 Claude。安装这份描述文件后，主屏幕上会多一枚「IP, PLEASE」图标，点开即全屏进入检查站，不用再经过 Safari 地址栏。
-IP_PLEASE.mobileconfig
-IOS CONFIGURATION PROFILE · 未签名
-载荷类型
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#161313">
+<title>IP, PLEASE · 安装描述文件</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23161313'/%3E%3Crect x='3' y='3' width='26' height='26' fill='none' stroke='%23e89c74' stroke-width='2'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='17' fill='%23e4dfd4' text-anchor='middle'%3EIP%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#161313; --panel:#1d1918; --panel2:#231e1c;
+  --line:#4a4440; --line-soft:#332d2a;
+  --dim:#968f87; --bright:#e4dfd4; --amber:#e89c74; --stamp:#9db07c;
+  --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,"Liberation Mono","PingFang SC","Noto Sans SC",monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);}
+body{
+  font-family:var(--mono); color:var(--bright); font-size:15px; line-height:1.7;
+  padding:0 0 40px; -webkit-text-size-adjust:100%;
+  background-image:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px);
+}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+img{image-rendering:pixelated}
+a{color:var(--amber)}
 
-WebClip 网页桌面图标
-目标地址
+/* 顶栏 */
+.bar{
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 18px;font-size:12px;color:var(--dim);letter-spacing:.04em;
+  position:sticky;top:0;background:rgba(22,19,19,.94);backdrop-filter:blur(2px);z-index:5;
+}
+.bar span{white-space:nowrap}
+.dot{display:inline-block;width:7px;height:7px;background:var(--stamp);margin-right:6px;vertical-align:1px}
 
-ip-please.github.io
-适用系统
+/* 首屏 */
+header{padding:34px 0 26px;border-bottom:1px solid var(--line-soft)}
+.plate{
+  display:inline-block;border:1px solid var(--line);color:var(--dim);
+  font-size:12px;padding:2px 8px;letter-spacing:.1em;margin-bottom:18px;
+}
+h1{
+  font-size:clamp(38px,13vw,64px);line-height:.95;margin:0 0 6px;
+  letter-spacing:-.02em;font-weight:700;
+}
+h1 em{font-style:normal;color:var(--amber)}
+.sub{font-size:clamp(15px,4.4vw,19px);color:var(--dim);margin:0 0 18px;letter-spacing:.06em}
+.lead{max-width:46ch;color:var(--bright);margin:0}
+.lead b{color:var(--amber);font-weight:700}
 
-iOS / iPadOS 12 及以上
-文件大小
+/* 档案卡 */
+.card{
+  background:var(--panel);border:1px solid var(--line);
+  margin:26px 0 0;padding:0;
+}
+.card-hd{
+  display:flex;align-items:center;gap:12px;padding:14px 16px;
+  border-bottom:1px dashed var(--line);background:var(--panel2);
+}
+.card-hd img{width:44px;height:44px;border:1px solid var(--line)}
+.card-hd .t{font-size:15px;line-height:1.3}
+.card-hd .t small{display:block;color:var(--dim);font-size:12px;letter-spacing:.06em}
+.rows{padding:6px 16px 14px}
+.row{
+  display:flex;align-items:baseline;gap:8px;padding:7px 0;
+  border-bottom:1px dotted var(--line-soft);font-size:14px;
+}
+.row:last-child{border-bottom:0}
+.row .k{color:var(--dim);white-space:nowrap;min-width:66px}
+.row .fill{flex:1;border-bottom:1px dotted var(--line-soft);transform:translateY(-3px)}
+.row .v{text-align:right;word-break:break-all}
+.ok{color:var(--stamp)}
 
-3.1 KB · 单载荷
-权限范围
+/* 安装 */
+.install{padding:16px}
+.cta{
+  display:block;text-align:center;text-decoration:none;
+  border:2px solid var(--amber);color:var(--amber);background:transparent;
+  padding:16px 10px;font-family:var(--mono);font-size:17px;font-weight:700;
+  letter-spacing:.08em;width:100%;cursor:pointer;
+  transition:background .12s linear,color .12s linear;
+}
+.cta:hover,.cta:focus-visible{background:var(--amber);color:#161313;outline:0}
+.cta:active{transform:translateY(1px)}
+.hint{color:var(--dim);font-size:12.5px;margin:10px 0 0;text-align:center;line-height:1.6}
 
-不含证书 / VPN / 蜂窝配置
-可移除
+/* 提示条 */
+.alert{
+  display:none;margin:22px 0 0;border:1px solid #7a6248;background:#221a15;
+  color:var(--amber);font-size:13.5px;padding:10px 14px;line-height:1.6;
+}
+.alert.on{display:block}
 
-是，随时在设置中删除
-安 装 描 述 文 件
-必须用 Safari 打开本页；微信 / QQ 内置浏览器无法安装描述文件
-安装流程
-	1	用 Safari 打开本页右上角「⋯」→ 在 Safari 中打开，把页面从微信里带出来  点上面的安装按钮弹出「此网站正尝试下载一个配置描述文件」，选「允许」  去设置里确认设置 → 通用 → VPN 与设备管理 → 点 IP, PLEASE → 右上角「安装」→ 输入密码  回主屏幕收活桌面出现像素图标，点开即全屏进入东八区检查站 
-载荷内容
-展开查看 mobileconfig 原始 XML
-+
-<?xml version="1.0" encoding="UTF-8"?>
-<plist version="1.0">
-<dict>
-  <key>PayloadType</key>
-  <string>Configuration</string>
-  <key>PayloadDisplayName</key>
-  <string>IP, PLEASE · 桌面安装包</string>
-  <key>PayloadRemovalDisallowed</key>
-  <false/>
-  <key>PayloadContent</key>
-  <array>
-    <dict>
-      <key>PayloadType</key>
-      <string>com.apple.webClip.managed</string>
-      <key>Label</key>
-      <string>IP, PLEASE</string>
-      <key>URL</key>
-      <string>https://ip-please.github.io</string>
-      <key>FullScreen</key><true/>
-      <key>Precomposed</key><true/>
-      <key>Icon</key><data>…180×180 PNG…</data>
-    </dict>
-  </array>
-</dict>
-</plist>
-INSPECTION PASSED
-本页只是描述文件的分发入口，不收集任何信息，不上报设备数据。描述文件里只有一个 WebClip 载荷，装完后图标在桌面，删除路径是「设置 → 通用 → VPN 与设备管理 → 移除描述文件」。
-托管提示：描述文件需与该页面放在同一目录；服务器需为 .mobileconfig 返回 application/x-apple-aspen-config，否则 Safari 会当文本打开。
+/* 步骤 */
+h2{
+  font-size:13px;color:var(--dim);letter-spacing:.16em;font-weight:400;
+  margin:34px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line);
+}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{
+  counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;
+  padding:10px 0;align-items:start;font-size:14.5px;
+}
+.steps li::before{
+  content:counter(s,decimal-leading-zero);
+  color:var(--dim);font-size:12px;border:1px solid var(--line-soft);
+  text-align:center;padding:2px 0;line-height:1.5;
+}
+.steps li.on::before{border-color:var(--amber);color:var(--amber)}
+.steps b{color:var(--bright);font-weight:700}
+.steps small{display:block;color:var(--dim);font-size:12.5px;margin-top:2px}
 
+/* 载荷清单 */
+details{border:1px solid var(--line);background:var(--panel);margin-top:14px}
+summary{
+  cursor:pointer;padding:12px 16px;font-size:13.5px;color:var(--dim);
+  list-style:none;display:flex;justify-content:space-between;gap:12px;
+}
+summary::-webkit-details-marker{display:none}
+summary span{color:var(--line)}
+details[open] summary{border-bottom:1px solid var(--line);color:var(--bright)}
+details[open] summary span{color:var(--amber)}
+pre{
+  margin:0;padding:14px 16px;overflow-x:auto;font-size:12px;line-height:1.75;
+  color:var(--dim);white-space:pre;
+}
+pre .hl{color:var(--amber)}
+kbd{background:var(--panel2);border:1px solid var(--line);padding:1px 5px;font-size:12px;color:var(--bright)}
+
+/* 页脚 */
+footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line-soft);color:var(--dim);font-size:12.5px;line-height:1.8}
+footer p{margin:0 0 8px}
+.stamp{
+  display:inline-block;border:2px solid var(--stamp);color:var(--stamp);
+  padding:2px 10px;font-size:12px;letter-spacing:.18em;transform:rotate(-2deg);
+  margin:6px 0 14px;
+}
+/* toast */
+#toast{
+  position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);
+  background:#231e1c;border:1px solid var(--line);color:var(--bright);
+  padding:9px 16px;font-size:13px;opacity:0;pointer-events:none;
+  transition:opacity .18s,transform .18s;z-index:9;max-width:88vw;text-align:center;
+}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media (min-width:768px){
+  body{font-size:15.5px}
+  .wrap{padding:0 28px}
+  .bar{padding:12px 28px;font-size:12.5px}
+  header{padding:52px 0 34px}
+  .row .k{min-width:88px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <span><i class="dot"></i>东八区 边检终端 · 终端号 IPP-WC-0001</span>
+  <span id="clock">--:--:--</span>
+</div>
+
+<div class="wrap">
+<header>
+  <div class="plate">WEB CLIP / 描述文件分发</div>
+  <h1>IP, <em>PLEASE</em></h1>
+  <p class="sub">请出示你的 IP — 桌面安装包</p>
+  <p class="lead">你是东八区检查站的审查员 Claude。安装这份描述文件后，主屏幕上会多一枚<b>「IP, PLEASE」</b>图标，点开即全屏进入检查站，不用再经过 Safari 地址栏。</p>
+</header>
+
+<div class="alert" id="alert"></div>
+
+<section class="card">
+  <div class="card-hd">
+    <img id="preview" alt="IP, PLEASE 图标" width="44" height="44">
+    <div class="t">IP_PLEASE.mobileconfig<small>IOS CONFIGURATION PROFILE · 未签名</small></div>
+  </div>
+  <div class="rows">
+    <div class="row"><span class="k">载荷类型</span><span class="fill"></span><span class="v">WebClip 网页桌面图标</span></div>
+    <div class="row"><span class="k">目标地址</span><span class="fill"></span><span class="v">ip-please.github.io</span></div>
+    <div class="row"><span class="k">适用系统</span><span class="fill"></span><span class="v">iOS / iPadOS 12 及以上</span></div>
+    <div class="row"><span class="k">文件大小</span><span class="fill"></span><span class="v">3.1 KB · 单载荷</span></div>
+    <div class="row"><span class="k">权限范围</span><span class="fill"></span><span class="v" class="ok">不含证书 / VPN / 蜂窝配置</span></div>
+    <div class="row"><span class="k">可移除</span><span class="fill"></span><span class="v">是，随时在设置中删除</span></div>
+  </div>
+  <div class="install">
+    <a class="cta" id="dl" href="IP_PLEASE.mobileconfig" download>安 装 描 述 文 件</a>
+    <p class="hint">必须用 Safari 打开本页；微信 / QQ 内置浏览器无法安装描述文件</p>
+  </div>
+</section>
+
+<h2>安装流程</h2>
+<ol class="steps">
+  <li><div><b>用 Safari 打开本页</b><small>右上角「⋯」→ 在 Safari 中打开，把页面从微信里带出来</small></div></li>
+  <li class="on"><div><b>点上面的安装按钮</b><small>弹出「此网站正尝试下载一个配置描述文件」，选「允许」</small></div></li>
+  <li><div><b>去设置里确认</b><small>设置 → 通用 → VPN 与设备管理 → 点 IP, PLEASE → 右上角「安装」→ 输入密码</small></div></li>
+  <li><div><b>回主屏幕收活</b><small>桌面出现像素图标，点开即全屏进入东八区检查站</small></div></li>
+</ol>
+
+<h2>载荷内容</h2>
+<details>
+  <summary><span style="flex:1">展开查看 mobileconfig 原始 XML</span><span>+</span></summary>
+<pre id="plist">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+  &lt;key&gt;<span class="hl">PayloadType</span>&lt;/key&gt;
+  &lt;string&gt;Configuration&lt;/string&gt;
+  &lt;key&gt;<span class="hl">PayloadDisplayName</span>&lt;/key&gt;
+  &lt;string&gt;IP, PLEASE · 桌面安装包&lt;/string&gt;
+  &lt;key&gt;<span class="hl">PayloadRemovalDisallowed</span>&lt;/key&gt;
+  &lt;false/&gt;
+  &lt;key&gt;PayloadContent&lt;/key&gt;
+  &lt;array&gt;
+    &lt;dict&gt;
+      &lt;key&gt;<span class="hl">PayloadType</span>&lt;/key&gt;
+      &lt;string&gt;com.apple.webClip.managed&lt;/string&gt;
+      &lt;key&gt;<span class="hl">Label</span>&lt;/key&gt;
+      &lt;string&gt;IP, PLEASE&lt;/string&gt;
+      &lt;key&gt;<span class="hl">URL</span>&lt;/key&gt;
+      &lt;string&gt;https://ip-please.github.io&lt;/string&gt;
+      &lt;key&gt;FullScreen&lt;/key&gt;&lt;true/&gt;
+      &lt;key&gt;Precomposed&lt;/key&gt;&lt;true/&gt;
+      &lt;key&gt;Icon&lt;/key&gt;&lt;data&gt;…180×180 PNG…&lt;/data&gt;
+    &lt;/dict&gt;
+  &lt;/array&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</pre>
+</details>
+
+<footer>
+  <div class="stamp">INSPECTION PASSED</div>
+  <p>本页只是描述文件的分发入口，不收集任何信息，不上报设备数据。描述文件里只有一个 WebClip 载荷，装完后图标在桌面，删除路径是「设置 → 通用 → VPN 与设备管理 → 移除描述文件」。</p>
+  <p>托管提示：描述文件需与该页面放在同一目录；服务器需为 <kbd>.mobileconfig</kbd> 返回 <kbd>application/x-apple-aspen-config</kbd>，否则 Safari 会当文本打开。</p>
+</footer>
+</div>
+
+<div id="toast"></div>
+
+<script>
+(function(){
+  // 图标
+  document.getElementById('preview').src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADzElEQVR4nO3dsa1cRRSA4V3kKizXQUAdDggsanABhBTgGpADAtfhgDost2HCJ6EZwdj33jf7v+8LYbW6iF9HmrOz++63Be/evP628no4wscvX+//97U/nfkgcDVBkyJoUgRNiqBJmZ4ebTTY2WzzYUKTImhSBE2KoEm5O/xRYkKTImhSBE2KoEkRNCmvnvsBHsH7tz8/9yPcbrfb7cOnv5/7EbZnQpMiaFIETYqgSRE0KfktxxEbivd/fT7gSX7ch19/+fH3iG9KTGhSBE2KoEkRNCmpC/6jA+AuB7pdjA6WpYOiCU2KoEkRNCmCJkXQpGy95Vj92NpG4/usfqS+81bEhCZF0KQImhRBk7LNodDH1o9j54/PTWhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEm5/C7H7NJ+5d7Gpz9+G/7zt7//efGTXGv2JYGr73iY0KQImhRBkyJoUk79wfNHvLQ/OtRdfaB7xIPl7P/r1YdFE5oUQZMiaFIETYqgScn/WbdVo03CmVuHHbYqJSY0KYImRdCkCJoUQZOS33IcsaGYvXb23mc9x8p7v9RNiQlNiqBJETQpgiblkEPhzt/kPuJAt8sF/5mdD4ArF/+PuPRvQpMiaFIETYqgSRE0KfmPvmdWNgOrW4cVPrY+lglNiqBJETQpgiYldSg88/B2pTP/O+oHThOaFEGTImhSBE2KoElJbTnOOsFfvT2pbyLOZEKTImhSBE2KoEkRNCmpLceKI37G4Ijtx8pfDFh5j5fKhCZF0KQImhRBk5I/FD7iH4JffTbfHH9iQpMiaFIETYqgSRE0Kfd3b15/O+vNR7/sv8Ov+q9a2ZSsblXqG4rRL/Xfbsf8Wv+ICU2KoEkRNCmCJkXQpOTvcqy6eutwxKaEJyY0KYImRdCkCJoUh8J/2eHgtcMzPCoTmhRBkyJoUgRNiqBJOfWC/8jo0v/t9pgX/3ly9UX+GROaFEGTImhSBE3K5YfCmco3xF+C0QHw6sPfjAlNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQp29zlGJl9GWD6enc/vsvscv709Zvc2xgxoUkRNCmCJkXQpGx9KFzlSwL/befL+UcwoUkRNCmCJkXQpAialNSWY2T14/Phe2yyKVn9iHr4HqGNxogJTYqgSRE0KYImRdCk5LccRzhiU3KE+obiCCY0KYImRdCkCJoUh0JSTGhSBE2KoEkRNCmCJuU++xe2H+zs45evw3ZNaFIETYqgSRE0KdND4YiDIs9hdgAcMaFJETQpgiZF0KQImpR/APr+1Dco6lC6AAAAAElFTkSuQmCC';
+
+  // 时钟
+  var c = document.getElementById('clock');
+  function tick(){
+    var d = new Date();
+    c.textContent = [d.getHours(),d.getMinutes(),d.getSeconds()]
+      .map(function(n){return String(n).padStart(2,'0');}).join(':');
+  }
+  tick(); setInterval(tick,1000);
+
+  // 环境检测
+  var ua = navigator.userAgent;
+  var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.maxTouchPoints>1 && /Macintosh/.test(ua));
+  var inApp = /MicroMessenger|QQ\/|Weibo|AlipayClient|DingTalk|Bytedance|aweme|Lark|Feishu/i.test(ua);
+  var box = document.getElementById('alert');
+  if(!isIOS){
+    box.textContent = '当前设备不是 iPhone / iPad。描述文件只能在 iOS 上安装，你可以把整个文件夹放到服务器，再用手机 Safari 访问。';
+    box.classList.add('on');
+  }else if(inApp){
+    box.textContent = '你在 App 内置浏览器里。点右上角「⋯」→ 在 Safari 中打开，否则无法安装描述文件。';
+    box.classList.add('on');
+  }
+
+  // toast
+  var toast = document.getElementById('toast'), tid;
+  function say(msg){
+    toast.textContent = msg; toast.classList.add('on');
+    clearTimeout(tid); tid = setTimeout(function(){toast.classList.remove('on');},1800);
+  }
+
+  // 安装点击：file:// 或未托管时给出兜底
+  document.getElementById('dl').addEventListener('click', function(e){
+    if(location.protocol === 'file:'){
+      e.preventDefault();
+      say('本地文件打不开，请把两个文件放到同一目录后用 Safari 访问');
+    }
+  });
+})();
+</script>
+</body>
+</html>
