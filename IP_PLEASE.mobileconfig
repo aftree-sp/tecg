@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>FullScreen</key>
+			<true/>
+			<key>Icon</key>
+			<data>
+iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADzElEQVR4nO3dsa1cRRSA
+4V3kKizXQUAdDggsanABhBTgGpADAtfhgDost2HCJ6EZwdj33jf7v+8LYbW6iF9HmrOz
+++63Be/evP628no4wscvX+//97U/nfkgcDVBkyJoUgRNiqBJmZ4ebTTY2WzzYUKTImhS
+BE2KoEm5O/xRYkKTImhSBE2KoEkRNCmvnvsBHsH7tz8/9yPcbrfb7cOnv5/7EbZnQpMi
+aFIETYqgSRE0KfktxxEbivd/fT7gSX7ch19/+fH3iG9KTGhSBE2KoEkRNCmpC/6jA+Au
+B7pdjA6WpYOiCU2KoEkRNCmCJkXQpGy95Vj92NpG4/usfqS+81bEhCZF0KQImhRBk7LN
+odDH1o9j54/PTWhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEm5/C7H7NJ+5d7Gpz9+
+G/7zt7//efGTXGv2JYGr73iY0KQImhRBkyJoUk79wfNHvLQ/OtRdfaB7xIPl7P/r1YdF
+E5oUQZMiaFIETYqgScn/WbdVo03CmVuHHbYqJSY0KYImRdCkCJoUQZOS33IcsaGYvXb2
+3mc9x8p7v9RNiQlNiqBJETQpgiblkEPhzt/kPuJAt8sF/5mdD4ArF/+PuPRvQpMiaFIE
+TYqgSRE0KfmPvmdWNgOrW4cVPrY+lglNiqBJETQpgiYldSg88/B2pTP/O+oHThOaFEGT
+ImhSBE2KoElJbTnOOsFfvT2pbyLOZEKTImhSBE2KoEkRNCmpLceKI37G4Ijtx8pfDFh5
+j5fKhCZF0KQImhRBk5I/FD7iH4JffTbfHH9iQpMiaFIETYqgSRE0Kfd3b15/O+vNR7/s
+v8Ov+q9a2ZSsblXqG4rRL/Xfbsf8Wv+ICU2KoEkRNCmCJkXQpOTvcqy6eutwxKaEJyY0
+KYImRdCkCJoUh8J/2eHgtcMzPCoTmhRBkyJoUgRNiqBJOfWC/8jo0v/t9pgX/3ly9UX+
+GROaFEGTImhSBE3K5YfCmco3xF+C0QHw6sPfjAlNiqBJETQpgiZF0KQImhRBkyJoUgRN
+iqBJETQp29zlGJl9GWD6enc/vsvscv709Zvc2xgxoUkRNCmCJkXQpGx9KFzlSwL/befL
++UcwoUkRNCmCJkXQpAialNSWY2T14/Phe2yyKVn9iHr4HqGNxogJTYqgSRE0KYImRdCk
+5LccRzhiU3KE+obiCCY0KYImRdCkCJoUh0JSTGhSBE2KoEkRNCmCJuU++xe2H+zs45ev
+w3ZNaFIETYqgSRE0KdND4YiDIs9hdgAcMaFJETQpgiZF0KQImpR/APr+1Dco6lC6AAAA
+AElFTkSuQmCC
+			</data>
+			<key>IgnoreManifestScope</key>
+			<true/>
+			<key>IsRemovable</key>
+			<true/>
+			<key>Label</key>
+			<string>IP, PLEASE</string>
+			<key>PayloadDescription</key>
+			<string>在桌面添加 IP, PLEASE 的网页图标，打开即进入东八区检查站。</string>
+			<key>PayloadDisplayName</key>
+			<string>IP, PLEASE · 请出示你的 IP</string>
+			<key>PayloadIdentifier</key>
+			<string>io.github.ip-please.webclip.CE159B0C-D38A-4CAD-9A44-7D70AE343EC2</string>
+			<key>PayloadType</key>
+			<string>com.apple.webClip.managed</string>
+			<key>PayloadUUID</key>
+			<string>CE159B0C-D38A-4CAD-9A44-7D70AE343EC2</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>Precomposed</key>
+			<true/>
+			<key>URL</key>
+			<string>https://ip-please.github.io</string>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>安装后会在主屏幕生成 IP, PLEASE 图标，全屏启动网页版审查站。不包含证书、VPN、网络配置，可随时在设置中移除。</string>
+	<key>PayloadDisplayName</key>
+	<string>IP, PLEASE · 桌面安装包</string>
+	<key>PayloadIdentifier</key>
+	<string>io.github.ip-please.profile.83A1E4C6-DD16-445B-800C-DE1A2431D479</string>
+	<key>PayloadOrganization</key>
+	<string>IP, PLEASE</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>83A1E4C6-DD16-445B-800C-DE1A2431D479</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
