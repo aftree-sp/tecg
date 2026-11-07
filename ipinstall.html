@@ -1,0 +1,62 @@
+东八区 边检终端 · 终端号 IPP-WC-0001
+--:--:--
+WEB CLIP / 描述文件分发
+IP, PLEASE
+请出示你的 IP — 桌面安装包
+你是东八区检查站的审查员 Claude。安装这份描述文件后，主屏幕上会多一枚「IP, PLEASE」图标，点开即全屏进入检查站，不用再经过 Safari 地址栏。
+IP_PLEASE.mobileconfig
+IOS CONFIGURATION PROFILE · 未签名
+载荷类型
+
+WebClip 网页桌面图标
+目标地址
+
+ip-please.github.io
+适用系统
+
+iOS / iPadOS 12 及以上
+文件大小
+
+3.1 KB · 单载荷
+权限范围
+
+不含证书 / VPN / 蜂窝配置
+可移除
+
+是，随时在设置中删除
+安 装 描 述 文 件
+必须用 Safari 打开本页；微信 / QQ 内置浏览器无法安装描述文件
+安装流程
+	1	用 Safari 打开本页右上角「⋯」→ 在 Safari 中打开，把页面从微信里带出来  点上面的安装按钮弹出「此网站正尝试下载一个配置描述文件」，选「允许」  去设置里确认设置 → 通用 → VPN 与设备管理 → 点 IP, PLEASE → 右上角「安装」→ 输入密码  回主屏幕收活桌面出现像素图标，点开即全屏进入东八区检查站 
+载荷内容
+展开查看 mobileconfig 原始 XML
++
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadDisplayName</key>
+  <string>IP, PLEASE · 桌面安装包</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.webClip.managed</string>
+      <key>Label</key>
+      <string>IP, PLEASE</string>
+      <key>URL</key>
+      <string>https://ip-please.github.io</string>
+      <key>FullScreen</key><true/>
+      <key>Precomposed</key><true/>
+      <key>Icon</key><data>…180×180 PNG…</data>
+    </dict>
+  </array>
+</dict>
+</plist>
+INSPECTION PASSED
+本页只是描述文件的分发入口，不收集任何信息，不上报设备数据。描述文件里只有一个 WebClip 载荷，装完后图标在桌面，删除路径是「设置 → 通用 → VPN 与设备管理 → 移除描述文件」。
+托管提示：描述文件需与该页面放在同一目录；服务器需为 .mobileconfig 返回 application/x-apple-aspen-config，否则 Safari 会当文本打开。
+
